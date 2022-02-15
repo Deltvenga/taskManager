@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import './TaskCard.css';
+
+// Require Editor CSS files.
+import 'froala-editor/css/froala_style.min.css';
+import 'froala-editor/css/froala_editor.pkgd.min.css';
+import FroalaEditorComponent from 'react-froala-wysiwyg';
+
 const MainDiv = styled.div`
   display: flex;
   width: 100%;
@@ -36,6 +43,16 @@ const HeaderDiv = styled.div`
   height: 10%;
 `
 
+const TextEditorDiv = styled.div`
+  display: flex;
+  height: 90%;
+`
+
+// В конфиге можно будет посзже настроить именно тот функционал, который нужен
+const configEditor = {
+  attribution: false
+};
+
 export default function TaskCard() {
   return (
     <MainDiv>
@@ -51,7 +68,9 @@ export default function TaskCard() {
         <HeaderDiv>
           Header
         </HeaderDiv>
-        MAIN CONTENT
+        <TextEditorDiv>
+          <FroalaEditorComponent config={configEditor} tag='textarea' />
+        </TextEditorDiv>
       </MainContentDiv>
     </MainDiv>
   );
