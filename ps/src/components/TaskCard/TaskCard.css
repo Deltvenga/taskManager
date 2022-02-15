@@ -1,0 +1,9 @@
+.fr-wrapper {
+    flex-grow: 1;
+}
+
+.fr-box {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
