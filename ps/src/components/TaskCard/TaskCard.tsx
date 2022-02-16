@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import CardLog from '../CardLog/CardLog';
 
 import './TaskCard.css';
 
@@ -61,7 +62,7 @@ export default function TaskCard() {
           History
         </HistoryDiv>
         <LogDiv>
-          Log
+         <CardLog/>
         </LogDiv>
       </LeftDiv>
       <MainContentDiv>
