@@ -7,6 +7,7 @@ import './TaskCard.css';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import FroalaEditorComponent from 'react-froala-wysiwyg';
+import TaskHeader from '../TaskHeader';
 
 const MainDiv = styled.div`
   display: flex;
@@ -33,7 +34,7 @@ const HistoryDiv = styled(LogDiv)`
 `
 
 const MainContentDiv = styled.div`
-  background-color: #445c20;
+  background-color: white;
   width: 100%;
 `
 
@@ -46,6 +47,7 @@ const HeaderDiv = styled.div`
 const TextEditorDiv = styled.div`
   display: flex;
   height: 90%;
+  margin-top: 20px;
 `
 
 // В конфиге можно будет посзже настроить именно тот функционал, который нужен
@@ -65,9 +67,7 @@ export default function TaskCard() {
         </LogDiv>
       </LeftDiv>
       <MainContentDiv>
-        <HeaderDiv>
-          Header
-        </HeaderDiv>
+        <TaskHeader />
         <TextEditorDiv>
           <FroalaEditorComponent config={configEditor} tag='textarea' />
         </TextEditorDiv>
