@@ -17,7 +17,7 @@ export default function BasicTimeline() {
     /**
      * Установка timeLineItem по данным
      */
-    function _setTimeLineItem({color, description, isFirstItem}: ITimelineItem) {
+     const setTimeLineItem = ({color, description, isFirstItem}: ITimelineItem) => {
         return (
             <TimelineItem>
                 <TimelineSeparator>
@@ -32,10 +32,10 @@ export default function BasicTimeline() {
     /**
      * Возвращаем коллекцию timeLineItem по данным с БЛ
      */
-    function _setAllTimeLineItem(someTimeCollection: ITimelineItem[]) {
+    const setAllTimeLineItem = (someTimeCollection: ITimelineItem[]) => {
         return(
             someTimeCollection.map((TimeLineItem) => {
-               _setTimeLineItem(TimeLineItem);
+               setTimeLineItem(TimeLineItem);
             })
         )
     }
@@ -58,7 +58,7 @@ export default function BasicTimeline() {
                     </TimelineSeparator>
                     <TimelineContent>Code</TimelineContent>
                 </TimelineItem>
-                { _setTimeLineItem({color: 'grey', description: 'Sleep', isFirstItem: true}) }
+                { setTimeLineItem({color: 'grey', description: 'Sleep', isFirstItem: true}) }
             </Timeline>
         </div>
     );
