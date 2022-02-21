@@ -1,7 +1,8 @@
-import { IconButton, Popover, Stack } from "@mui/material";
+import { IconButton, Stack } from "@mui/material";
 import styled from 'styled-components';
 import { InfoOutlined, MoreVert } from '@mui/icons-material/'
 import React from "react";
+import { TaskActions } from "./TaskActions";
 
 const Header = styled.div`
   background-color: white;
@@ -22,8 +23,7 @@ const TaskName = styled.div`
   color: #373745;
 `
 
-const TaskHeaderActions = styled.div`
-  display: flex;
+const TaskHeaderActions = styled(Stack)`
   align-items: center;
   margin-right: 0;
   margin-left: auto;
@@ -57,7 +57,7 @@ const TaskHeader = () => {
           {taskName}
         </TaskName>
 
-        <TaskHeaderActions> 
+        <TaskHeaderActions direction='row' spacing={2}> 
           <IconButton size='small'>
             <InfoOutlined sx={iconStyles} />
           </IconButton>
@@ -72,22 +72,11 @@ const TaskHeader = () => {
 
       </Stack>
 
-      <Popover
-        id="mouse-over-popover"
+      <TaskActions
         open={open}
         anchorEl={anchorEl}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'right'
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
-        disableRestoreFocus
-        onClose={() => setAnchorEl(null)}>
-        Some task actions
-      </Popover>
+        onClose={() => setAnchorEl(null)} 
+      />
     </Header>
   )
 }

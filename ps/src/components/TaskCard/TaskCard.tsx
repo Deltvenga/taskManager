@@ -8,7 +8,7 @@ import './TaskCard.css';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import FroalaEditorComponent from 'react-froala-wysiwyg';
-import TaskHeader from '../TaskHeader';
+import TaskHeader from '../TaskHeader/TaskHeader';
 
 const MainDiv = styled.div`
   display: flex;
