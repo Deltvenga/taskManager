@@ -2,6 +2,7 @@ import { IconButton, Popover, Stack } from "@mui/material";
 import styled from 'styled-components';
 import { InfoOutlined, MoreVert } from '@mui/icons-material/'
 import React from "react";
+import TaskChat from './TaskChat';
 
 const Header = styled.div`
   background-color: white;
@@ -31,6 +32,7 @@ const TaskHeaderActions = styled.div`
 
 const TaskHeader = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [openTaskChat, setOpenTaskChat] = React.useState(false);
 
   const handlePopoverOpen = (event: any) => {
     setAnchorEl(event.currentTarget);
@@ -58,7 +60,7 @@ const TaskHeader = () => {
         </TaskName>
 
         <TaskHeaderActions> 
-          <IconButton size='small'>
+          <IconButton size='small' onClick={() => setOpenTaskChat(true)}>
             <InfoOutlined sx={iconStyles} />
           </IconButton>
 
@@ -88,6 +90,7 @@ const TaskHeader = () => {
         onClose={() => setAnchorEl(null)}>
         Some task actions
       </Popover>
+      <TaskChat onClose={()=> setOpenTaskChat(false)} open={openTaskChat}/>
     </Header>
   )
 }
