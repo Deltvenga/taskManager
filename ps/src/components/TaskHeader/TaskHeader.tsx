@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { InfoOutlined, MoreVert } from '@mui/icons-material/'
 import React from "react";
 import { TaskActions } from "./TaskActions";
+import { TaskInfo } from "./TaskInfo";
 
 const Header = styled.div`
   background-color: white;
@@ -30,13 +31,18 @@ const TaskHeaderActions = styled(Stack)`
 `
 
 const TaskHeader = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [taskActionsAnchorEl, setTaskActionsAnchorEl] = React.useState(null);
+  const [taskInfoOpen, setTaskInfoOpen] = React.useState(false);
 
-  const handlePopoverOpen = (event: any) => {
-    setAnchorEl(event.currentTarget);
+  const handleTaskActionsOpen = (event: any) => {
+    setTaskActionsAnchorEl(event.currentTarget);
   };
 
-  const open = Boolean(anchorEl);
+  const handleTaskInfoOpen = (event: any) => {
+    setTaskInfoOpen(true)
+  };
+
+  const taskActionsOpen = Boolean(taskActionsAnchorEl);
 
   const taskName = 'Project name';
   const iconStyles = {
@@ -58,14 +64,17 @@ const TaskHeader = () => {
         </TaskName>
 
         <TaskHeaderActions direction='row' spacing={2}> 
-          <IconButton size='small'>
+          <IconButton 
+            size='small'
+            onClick={handleTaskInfoOpen}
+          >
             <InfoOutlined sx={iconStyles} />
           </IconButton>
 
           <IconButton 
             size='small' 
-            onClick={handlePopoverOpen}
-            aria-owns={open ? 'mouse-over-popover' : undefined}>
+            onClick={handleTaskActionsOpen}
+            aria-owns={taskActionsOpen ? 'mouse-over-popover' : undefined}>
             <MoreVert sx={iconStyles} />
           </IconButton>
         </TaskHeaderActions>
@@ -73,10 +82,18 @@ const TaskHeader = () => {
       </Stack>
 
       <TaskActions
-        open={open}
-        anchorEl={anchorEl}
-        onClose={() => setAnchorEl(null)} 
+        open={taskActionsOpen}
+        anchorEl={taskActionsAnchorEl}
+        onClose={() => setTaskActionsAnchorEl(null)} 
       />
+
+      <TaskInfo
+        open={taskInfoOpen}
+        onClose={() => setTaskInfoOpen(false)} 
+      >
+        <Stack>Очень длинное и подробное описание задачи с картинками</Stack>
+      </TaskInfo>
+
     </Header>
   )
 }

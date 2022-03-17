@@ -34,45 +34,46 @@ const TaskActions = (props: PopoverProps) => {
 				horizontal: 'right'
 			}}
 			disableRestoreFocus
-			sx={{ padding: '4px 0 !important', maxWidth: '350px' }}
 			{...props}
 		>
-			<StyledMenuItem>
-				<Stack direction='row' spacing={2}>
-					<Edit sx={menuItemIconStyles} />
-					<StyledMenuItemText>
-						РедактироватьРедактировать Редактировать Редактировать
-						</StyledMenuItemText>
-				</Stack>
-			</StyledMenuItem>
+      <Stack sx={{ padding: '4px 0 !important', maxWidth: '350px' }}>
+        <StyledMenuItem>
+          <Stack direction='row' spacing={2}>
+            <Edit sx={menuItemIconStyles} />
+            <StyledMenuItemText>
+              РедактироватьРедактировать Редактировать Редактировать
+              </StyledMenuItemText>
+          </Stack>
+        </StyledMenuItem>
 
-			<StyledMenuItem>
-				<Stack direction='row' spacing={2}>
-					<AssignmentInd sx={menuItemIconStyles} />
-					<StyledMenuItemText>
-						Переназначить
-					</StyledMenuItemText>
-				</Stack>
-			</StyledMenuItem>
+        <StyledMenuItem>
+          <Stack direction='row' spacing={2}>
+            <AssignmentInd sx={menuItemIconStyles} />
+            <StyledMenuItemText>
+              Переназначить
+            </StyledMenuItemText>
+          </Stack>
+        </StyledMenuItem>
 
-			<StyledMenuItem>
-				<Stack direction='row' spacing={2}>
-					<Done sx={menuItemIconStyles} />
-					<StyledMenuItemText>
-						Завершить
-					</StyledMenuItemText>
-				</Stack>
-			</StyledMenuItem>
+        <StyledMenuItem>
+          <Stack direction='row' spacing={2}>
+            <Done sx={menuItemIconStyles} />
+            <StyledMenuItemText>
+              Завершить
+            </StyledMenuItemText>
+          </Stack>
+        </StyledMenuItem>
 
-			<StyledMenuItem>
-				<Stack direction='row' spacing={2}>
-					<DeleteOutline sx={{ ...menuItemIconStyles, color: 'red' }}/>
-					<StyledMenuItemText sx={{ color: 'red' }}>
-						Удалить
-					</StyledMenuItemText>
-				</Stack>
-			</StyledMenuItem>
-		</Popover>
+        <StyledMenuItem>
+          <Stack direction='row' spacing={2}>
+            <DeleteOutline sx={{ ...menuItemIconStyles, color: 'red' }}/>
+            <StyledMenuItemText sx={{ color: 'red' }}>
+              Удалить
+            </StyledMenuItemText>
+          </Stack>
+        </StyledMenuItem>
+      </Stack>
+    </Popover>
 	)
 }
 
