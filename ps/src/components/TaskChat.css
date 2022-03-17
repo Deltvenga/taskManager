@@ -5,3 +5,7 @@
 .messageInput {
     margin-left: 45px;
 }
+
+.messageInput fieldset {
+    border-color: #ff000000 !important;
+}
