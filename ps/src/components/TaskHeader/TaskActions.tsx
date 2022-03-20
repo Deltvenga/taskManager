@@ -35,6 +35,7 @@ const TaskActions = (props: PopoverProps) => {
 			}}
 			disableRestoreFocus
 			{...props}
+      sx={{ marginTop: '4px' }}
 		>
       <Stack sx={{ padding: '4px 0 !important', maxWidth: '350px' }}>
         <StyledMenuItem>

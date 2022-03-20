@@ -45,6 +45,7 @@ const TaskHeader = () => {
   const taskActionsOpen = Boolean(taskActionsAnchorEl);
 
   const taskName = 'Project name';
+
   const iconStyles = {
     width: '20px',
     height: '20px',
@@ -71,7 +72,10 @@ const TaskHeader = () => {
             <InfoOutlined sx={iconStyles} />
           </IconButton>
 
-          <IconButton 
+          <IconButton
+            sx={{
+              backgroundColor: (taskActionsAnchorEl ? '#efefef' : 'transparent')
+            }}
             size='small' 
             onClick={handleTaskActionsOpen}
             aria-owns={taskActionsOpen ? 'mouse-over-popover' : undefined}>
