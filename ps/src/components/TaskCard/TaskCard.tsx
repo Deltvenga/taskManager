@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import CardLog from '../CardLog/CardLog';
-
 import './TaskCard.css';
 
 // Require Editor CSS files.
