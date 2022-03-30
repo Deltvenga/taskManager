@@ -1,0 +1,16 @@
+.messageBox {
+    height: 100%;
+}
+
+.messageInput {
+    margin-left: 45px;
+}
+
+.messageInput fieldset {
+    border-color: #ff000000 !important;
+}
+
+.AvatarButton {
+  margin-top: 14px;
+  margin-left: 46px;
+}
